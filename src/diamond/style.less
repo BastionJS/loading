@@ -1,0 +1,50 @@
+@green : #2ecc71;
+@90 : 90deg;
+
+.diamond-loading {
+  position: relative;
+  .square {
+    width: 8px;
+    height: 30px;
+    background: @green;
+    border-radius: 10px;
+    display: block;
+    -webkit-animation: turn 2.5s ease infinite;
+    animation: turn 2.5s ease infinite;
+  }
+  .top {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: rotate(@90);
+  }
+  .bottom {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: rotate(-@90);
+  }
+  .left {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+  }
+  .right {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: rotate(-@90*2);
+  }
+}
+
+@keyframes turn {
+  0% {
+    transform:translateX(0) translateY(0) rotate(0);
+  }
+  70% {
+    transform: translateX(400%) translateY(100%) rotate(@90);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}

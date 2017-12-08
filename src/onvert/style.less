@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+.onvert-loading {
+  position: absolute;
+  width: 196px;
+  height: 50px;
+  font-size: 34px;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  div {
+    position: absolute;
+    transform-origin: center;
+    &.l {
+      left: 0px;
+    }
+    &.square, .circle, .triangle {
+      left: 23px;
+    }
+    &.square {
+      background: #75B3D1;
+      width: 26px;
+      height: 26px;
+      left: 30px;
+      top: 10px;
+      transform: scale(0);
+      animation: shrinkgrow 3s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+    &.circle {
+      background: #81D47D;
+      width: 28px;
+      height: 28px;
+      top: 8px;
+      left: 28px;
+      border-radius:50%;
+      animation: shrinkgrow 3s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+    &.triangle {
+      width: 0;
+      height: 0;
+      left: 29px;
+      top: 8px;
+      border-style: solid;
+      border-width: 0 14.5px 27px 14.5px;
+      border-color: transparent transparent #D2798C transparent;
+      transform: scale(0);
+      animation: shrinkgrow 3s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    &.a {
+      left: 66px;
+    }
+    &.d {
+      left: 94px;
+    }
+    &.i {
+      left: 125px;
+    }
+    &.n {
+      left: 140px;
+    }
+    &.g {
+      left: 170px;
+    }
+  }
+}
+
+@keyframes shrinkgrow {
+  0% {
+    transform:scale(0);
+  }
+  
+  12.5% {
+    transform:scale(1)
+  }
+  
+  25% {
+    transform:scale(1)
+  }
+  
+  33% {
+    transform:scale(0)
+  }
+  100% {
+    transform:scale(0)
+  }
+}
