@@ -6,6 +6,8 @@ import Double from './double';
 import Onvert from './onvert';
 import Diamond from './diamond';
 import Gooey from './gooey';
+import Cupcake from './cupcake';
+import Border from './border';
 
 const createLoading = WrappedComponent => {
   return class extends Component {
@@ -49,3 +51,5 @@ export const DoubleLoading = createLoading(Double);
 export const OnvertLoading = createLoading(Onvert);
 export const DiamondLoading = createLoading(Diamond);
 export const GooeyLoading = createLoading(Gooey);
+export const CupcakeLoading = createLoading(Cupcake);
+export const BorderLoading = createLoading(Border);

@@ -9,8 +9,8 @@ class Loading extends React.Component {
 
     const doubleClass = classNames({
       'double-loading': true,
-      'double-loading-small': size === 'small',
-      'double-loading-large': size === 'large',
+      'double-loading-sm': size === 'small',
+      'double-loading-lg': size === 'large',
     });
 
     return (

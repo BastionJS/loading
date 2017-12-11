@@ -1,0 +1,75 @@
+@size: 32px;
+
+.cupcake-loading {
+  display: flex;
+  .letter {
+    font-size: @size;
+    font-family: tahoma;
+  }
+  .cupcakeCircle, .cupcakeInner, .cupcakeCore {
+    display: flex;
+    border-radius: 50%;
+  }
+  .cupcakeCircle {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    height: @size;
+    width: @size;
+    background-color: #222;
+  }
+  .cupcakeInner {
+    align-self: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    animation-name: cupcakeAnimate;
+    animation-duration: 500ms;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .cupcakeCore {
+    align-self: center;
+    height: 25%;
+    width: 25%;
+    background-color: #222;
+    animation-name: coreAnimate;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  &&-sm {
+    .letter {
+      font-size: @size * 2 / 3;
+    }
+    .cupcakeCircle {
+      height: @size * 2 / 3;
+      width: @size * 2 / 3;
+    }
+  }
+  &&-lg {
+    .letter {
+      font-size: @size * 2;
+    }
+    .cupcakeCircle {
+      height: @size * 2;
+      width: @size * 2;
+    }
+  }
+}
+
+@keyframes cupcakeAnimate {
+  to {
+    height:90%;
+    width:90%;
+  }
+}
+
+@keyframes coreAnimate {
+  to {
+    height:90%;
+    width:90%;
+  }
+}
