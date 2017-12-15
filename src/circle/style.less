@@ -1,0 +1,52 @@
+@size : 50vmin;
+@duration : 1.5s;
+@axis : 60deg;
+@easing : ease-in-out;
+
+.circle-loading {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: wobble @duration * 2.66 @easing infinite;
+  .after, .before {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 50px solid;
+    border-radius: 50%;
+    animation: spin @duration @easing infinite both reverse;
+  }
+  .before {
+    position: absolute;
+    border-color: #fff;
+  }
+  .after {
+    border-color: #000;
+    animation-delay: -(@duration / 2);
+   }
+}
+
+@keyframes wobble {
+  0%, 100% {
+  transform: 
+    rotateX(@axis / 8) 
+    rotateY(@axis / 2);
+  }
+  50% {
+    transform: 
+      rotateX(@axis / 2) 
+      rotateY(-(@axis / 2))
+      rotate(180deg);
+  }
+}
+
+@keyframes spin {
+  0%, 100% {
+	transform: translateZ(50px) rotateX(@axis / 5);
+  }
+  33% {
+	transform: translateZ(-50px) scale(.4);
+  }
+  66% {
+	transform: translateZ(-50px);
+  }
+}

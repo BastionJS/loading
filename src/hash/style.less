@@ -1,0 +1,86 @@
+// @colors:
+@color1: #E7508A;
+@color2: #EFBF60;
+@color3: #92D7E5;
+@color4: #6ACAAC;
+
+@size: 25px;
+@thickness: 5px;
+@lat: (@size - @thickness) / 2;
+@offset: @lat - @thickness;
+
+.hash-loading {
+  position: relative;
+  width: @size;
+  height: @size;
+  transform: rotate(165deg);
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: @thickness;
+    height: @thickness;
+    border-radius: @thickness / 2;
+    transform: translate(-50%, -50%);
+  }
+  &:before {
+    animation: before 2s infinite;
+  }
+  &:after {
+    animation: after 2s infinite;
+  }
+}
+
+@keyframes before {
+  0% {
+    width: @thickness;
+    box-shadow:
+      @lat (-@offset) @color1,
+      (-@lat) @offset @color3;
+    }
+  35% {
+    width: @size;
+    box-shadow:
+      0 (-@offset) @color1,
+      0 @offset @color3;
+  }
+  70% {
+    width: @thickness;
+    box-shadow:
+      (-@lat) (-@offset) @color1,
+      @lat @offset @color3;
+  }
+  100% {
+    box-shadow:
+      @lat (-@offset) @color1,
+      (-@lat) @offset @color3;
+  }
+}
+
+@keyframes after {
+  0% {
+    height: @thickness;
+    box-shadow:
+      @offset @lat @color2,
+      (-@offset) (-@lat) @color4;
+  }
+  35% {
+    height: @size;
+    box-shadow:
+      @offset 0 @color2,
+      (-@offset) 0 @color4;
+  }
+  70% {
+    height: @thickness;
+    box-shadow:
+      @offset (-@lat) @color2,
+      (-@offset) @lat @color4;
+  }
+  100% {
+    box-shadow:
+      @offset @lat @color2,
+      (-@offset) (-@lat) @color4;
+  }
+}

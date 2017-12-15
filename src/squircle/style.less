@@ -1,0 +1,33 @@
+.squircle-loading {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  .outer, .inner {
+    position: absolute;
+    left: 64px;
+    top: 64px;
+    width: 128px;
+    height: 128px;
+    margin-left: -64px;
+    margin-top: -64px;
+    border: 8px solid red;
+    border-radius: 45px;  
+  }
+  .outer {
+    animation: outer-rotate 1s linear 0s infinite;
+  }
+  .inner {
+    animation: inner-rotate 2s linear -1s infinite;
+  }
+}
+
+@keyframes outer-rotate {
+  from { tranform: rotate( 0 ) } 
+  to { transform: rotate( 90deg ) }
+}
+  
+@keyframes inner-rotate {
+  from { tranform: rotate( 0deg ) scale( 1 ) }
+  50% { transform: rotate( 45deg ) scale( .85 ) }
+  to { transform: rotate( 90deg ) scale( 1 ) }
+}

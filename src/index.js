@@ -8,6 +8,13 @@ import Diamond from './diamond';
 import Gooey from './gooey';
 import Cupcake from './cupcake';
 import Border from './border';
+import Circle from './circle';
+import Block from './block';
+import Hash from './hash';
+import Man from './man';
+import Thing from './thing';
+import Squircle from './squircle';
+import Rollbar from './rollbar';
 
 const createLoading = WrappedComponent => {
   return class extends Component {
@@ -40,7 +47,7 @@ const createLoading = WrappedComponent => {
           <div className={contentClass}>
             {children}
           </div>
-          {loading && <div><WrappedComponent {...other} /></div>}
+          {loading && <WrappedComponent {...other} />}
         </div>
       )
     }
@@ -53,3 +60,10 @@ export const DiamondLoading = createLoading(Diamond);
 export const GooeyLoading = createLoading(Gooey);
 export const CupcakeLoading = createLoading(Cupcake);
 export const BorderLoading = createLoading(Border);
+export const CircleLoading = createLoading(Circle);
+export const BlockLoading = createLoading(Block);
+export const HashLoading = createLoading(Hash);
+export const ManLoading = createLoading(Man);
+export const ThingLoading = createLoading(Thing);
+export const SquircleLoading = createLoading(Squircle);
+export const RollbarLoading = createLoading(Rollbar);

@@ -1,5 +1,33 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { GooeyLoading } from '../src';
+import './style.less';
+import { DoubleLoading,
+         OnvertLoading,
+         DiamondLoading,
+         CupcakeLoading,
+         BorderLoading,
+         GooeyLoading,
+         CircleLoading,
+         BlockLoading,
+         HashLoading,
+         ManLoading,
+         ThingLoading,
+         SquircleLoading,
+         RollbarLoading } from '../src';
 
-render(<div style={{width: 400, height: 600}}><GooeyLoading />你好 子啊吗</div>, document.querySelector('#app'));
+render(
+  <div className="lanif-loading">
+    <DoubleLoading />
+    <OnvertLoading />
+    <DiamondLoading />
+    <CupcakeLoading />
+    <BorderLoading />
+    <GooeyLoading />
+    <CircleLoading />
+    <BlockLoading />
+    <HashLoading size="large" />
+    <ManLoading />
+    <ThingLoading />
+    <SquircleLoading />
+    <RollbarLoading />
+  </div>, document.querySelector('#app'));
